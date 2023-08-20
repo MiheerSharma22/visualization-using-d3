@@ -6,12 +6,19 @@ require("dotenv").config();
 
 const routers = require("./routes/routes");
 const dbConnection = require("./config/database");
+const cors = require("cors");
 
 //fetching port
 const PORT = process.env.PORT || 5000;
 
 // middleware to parse json request body
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // front end path(url) from where the request will be made to the backend or server
+    credentials: true,
+  })
+);
 
 // mounting routes
 app.use("/api/v1", routers);
