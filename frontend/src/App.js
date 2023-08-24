@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import getData from "./service-calls/getData";
 import Navbar from "./components/Navbar";
 import ScatterPlot from "./components/ScatterPlot";
 
 function App() {
-  let data;
+  const [data, setData] = useState([]);
 
   async function fetchData() {
     const response = await getData();
-    data = await response.json();
-    console.log(data);
+    const dataArray = await response.json();
+    setData(dataArray.data);
   }
 
   useEffect(() => {
@@ -19,9 +19,9 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#2f3349] min-w-screen min-h-screen py-[1rem] flex flex-col gap-[4rem]">
+    <div className="bg-[#2f3349] min-w-screen min-h-screen py-[1rem] flex flex-col gap-[2rem]">
       <Navbar />
-      <ScatterPlot />
+      <ScatterPlot data={data} width={700} height={500} />
     </div>
   );
 }
