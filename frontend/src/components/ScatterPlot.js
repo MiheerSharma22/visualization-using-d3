@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import * as d3 from "d3";
 
 const ScatterPlot = ({ data, width, height }) => {
-  console.log(data);
   useEffect(() => {
     drawChart();
     //eslint-disable-next-line
@@ -24,7 +23,7 @@ const ScatterPlot = ({ data, width, height }) => {
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Add X axis
-    const x = d3.scaleLinear().domain([0, 10]).range([0, width]);
+    const x = d3.scaleLinear().domain([0, 5]).range([0, width]);
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
@@ -49,18 +48,6 @@ const ScatterPlot = ({ data, width, height }) => {
       })
       .attr("r", 3)
       .style("fill", "#7367f0");
-
-    // const focus = svg
-    //   .append("g")
-    //   .attr("class", "focus")
-    //   .style("display", "none");
-    // focus.append("circle").attr("r", 5).attr("class", "circle");
-
-    const tooltip = d3
-      .select("#container")
-      .append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
   }
 
   return (
