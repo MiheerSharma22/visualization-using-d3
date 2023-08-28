@@ -42,6 +42,13 @@ const ScatterPlot = ({ data, width, height }) => {
     const y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
     svg.append("g").attr("class", "axisText").call(d3.axisLeft(y));
 
+    // adding tooltip
+    var tooltip = d3
+      .select("#container")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
     svg
       .append("text")
       .attr("class", "label")
@@ -57,13 +64,30 @@ const ScatterPlot = ({ data, width, height }) => {
       .data(data)
       .enter()
       .append("circle")
+      .on("mouseover", (e, d) => {
+        tooltip.transition().duration(200).style("opacity", 0.9);
+        tooltip
+          .html(
+            `<p><span>${d.title}</span></p> 
+              <div class="likelihood-intensity-tooltip-container">
+                <p><span>Likelihood:</span> ${d.likelihood}</p> 
+                <p><span>Intensity:</span> ${d.intensity}</p>
+              </div>
+             `
+          )
+          .style("left", width - 50 + "px")
+          .style("top", -height + "px");
+      })
+      .on("mouseout", (d) => {
+        tooltip.transition().duration(500).style("opacity", 0);
+      })
       .attr("cx", function (d) {
         return x(d.likelihood);
       })
       .attr("cy", function (d) {
         return y(d.intensity);
       })
-      .attr("r", 3)
+      .attr("r", 4)
       .style("fill", "#7367f0");
   }
 
