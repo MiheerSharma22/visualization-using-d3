@@ -16,3 +16,12 @@ body {
   font-size: 1rem;
   color: rgba(208, 212, 241, 0.3);
 }
+
+svg {
+  overflow: visible;
+}
+
+.label {
+  /* font-weight: 600; */
+  font-size: 1.2rem;
+}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import getData from "./service-calls/getData";
 import Navbar from "./components/Navbar";
 import ScatterPlot from "./components/ScatterPlot";
