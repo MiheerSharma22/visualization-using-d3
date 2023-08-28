@@ -30,9 +30,26 @@ const ScatterPlot = ({ data, width, height }) => {
       .attr("class", "axisText")
       .call(d3.axisBottom(x));
 
+    svg
+      .append("text")
+      .attr("class", "label")
+      .attr("x", 0.5 * width)
+      .attr("y", height + 60)
+      .attr("fill", "#7367f0")
+      .text("Likelihood ->");
+
     // Add Y axis
     const y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
     svg.append("g").attr("class", "axisText").call(d3.axisLeft(y));
+
+    svg
+      .append("text")
+      .attr("class", "label")
+      .attr("x", -0.5 * height)
+      .attr("y", -50)
+      .attr("transform", `rotate(-90)`)
+      .attr("fill", "#7367f0")
+      .text("Intensity ->");
 
     svg
       .append("g")
@@ -51,9 +68,9 @@ const ScatterPlot = ({ data, width, height }) => {
   }
 
   return (
-    <div className="w-9/12 mx-auto flex flex-col border border-borderColor px-[1.3rem] py-[0.75rem] rounded-lg">
+    <div className="w-9/12 mx-auto flex flex-col border border-borderColor px-[1.3rem] py-[1rem] rounded-lg ">
       <p className="text-textColor text-xl font-medium">Scatter Chart</p>
-      <div id="container" className="place-self-center "></div>
+      <div id="container" className="place-self-center p-[0.75rem]"></div>
     </div>
   );
 };
