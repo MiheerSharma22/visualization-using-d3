@@ -31,13 +31,13 @@ svg {
   width: 300px;
   display: flex;
   flex-direction: column;
-  background-color: #ffffffe0;
+  background-color: #5a3e96;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
+  color: #ffffffcc;
 }
 
 .tooltip > p span {
-  color: rgba(0, 0, 0, 0.728);
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
@@ -48,9 +48,28 @@ svg {
   display: flex;
   justify-content: space-around;
   font-size: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .likelihood-intensity-tooltip-container span {
-  color: #5a3e96;
   font-weight: 600;
+}
+
+.doughnut-tooltip-container {
+  background-color: #43d28066;
+  border-radius: 0.5rem;
+  width: fit-content;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.doughnut-tooltip-container span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffffcc;
 }
