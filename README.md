@@ -1,6 +1,6 @@
 # Overview
 
-This is a small project to practice and implement d3.js to create charts (not responsive) using some a data source(it is a mock data). The data is being fetched from an API (created using Node.js and Express.js) on the intitial render.
+This is a small project to practice and implement d3.js to create charts (not responsive) using a data source from the internet (a mock data). The data is being fetched from an API (created using Node.js and Express.js) on the intitial render.
 
 Please see the app <a href="https://visualization-using-d3-frontend.vercel.app/">here.</a>
 
