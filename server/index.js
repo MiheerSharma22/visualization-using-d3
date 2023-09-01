@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 const allowedOrigins = [
-  "https://visualization-using-d3-frontend.vercel.app/",
+  "https://visualization-using-d3-frontend.vercel.app",
   "http://localhost:3000",
 ];
 app.use(
