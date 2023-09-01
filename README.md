@@ -19,6 +19,8 @@ Please see the app <a href="https://visualization-using-d3-frontend.vercel.app/"
 
 - Learned how to plot charts using d3 selectors and SVG(s), and how to set multiple attributes in it like the type of the chart, how to plot data on the chart and add axes and labels and much more.
 
+- Implemented displaying of a tooltip related to the chart element being hovered on.
+
 ## Screenshots
 
 <img src="./SS-1.png" alt="screenShot-1">
