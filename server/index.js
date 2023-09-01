@@ -25,6 +25,11 @@ app.use(
   })
 );
 
+// default route
+app.get("/", (req, res) => {
+  return "<h1>Hello From Server</h1>";
+});
+
 // mounting routes
 app.use("/api/v1", routers);
 
