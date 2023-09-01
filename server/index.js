@@ -13,9 +13,14 @@ const PORT = process.env.PORT || 5000;
 
 // middleware to parse json request body
 app.use(express.json());
+
+const allowedOrigins = [
+  "https://visualization-using-d3-frontend.vercel.app/",
+  "http://localhost:3000",
+];
 app.use(
   cors({
-    origin: "http://localhost:3000", // front end path(url) from where the request will be made to the backend or server
+    origin: allowedOrigins, // front end path(url) from where the request will be made to the backend or server
     credentials: true,
   })
 );
