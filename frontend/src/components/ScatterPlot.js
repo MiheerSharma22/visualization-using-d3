@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import * as d3 from "d3";
 
+//todo: add a label to the chart ki chart kr kya rha hai and tell what is the data and what does it comprises
+
 const ScatterPlot = ({ data, width, height }) => {
   useEffect(() => {
     drawChart();
@@ -94,6 +96,12 @@ const ScatterPlot = ({ data, width, height }) => {
   return (
     <div className="w-9/12 mx-auto flex flex-col border border-borderColor px-[1.3rem] py-[1rem] rounded-lg ">
       <p className="text-textColor text-xl font-medium">Scatter Chart</p>
+      <p className="text-[#7367f0] text-sm text-center mt-3">
+        Each chart element/dot shows an event/action (these are mock data) and
+        its <span className="font-bold capitalize">liklihood</span> (out of 5)
+        to come true in future v/s its{" "}
+        <span className="font-bold capitalize">intensity value</span>.
+      </p>
       <div id="container" className="place-self-center p-[0.75rem]"></div>
     </div>
   );
