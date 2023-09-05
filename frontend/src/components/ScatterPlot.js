@@ -72,8 +72,11 @@ const ScatterPlot = ({ data, width, height }) => {
           .html(
             `<p><span>${d.title}</span></p> 
               <div class="likelihood-intensity-tooltip-container">
-                <p><span>Likelihood:</span> ${d.likelihood}</p> 
-                <p><span>Intensity:</span> ${d.intensity}</p>
+                <p><span>Likelihood:</span> ${
+                  d.likelihood ? d.likelihood : 0
+                }</p> 
+                <p><span>Intensity:</span> ${d.intensity ? d.intensity : 0}</p>
+                <p><span>Sector:</span> ${d.sector ? d.sector : "Other"}</p>
               </div>
              `
           )

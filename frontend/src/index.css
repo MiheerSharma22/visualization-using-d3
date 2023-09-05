@@ -46,9 +46,10 @@ svg {
 
 .likelihood-intensity-tooltip-container {
   display: flex;
-  justify-content: space-around;
+  gap: 1.5rem;
   font-size: 1.2rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .likelihood-intensity-tooltip-container span {
