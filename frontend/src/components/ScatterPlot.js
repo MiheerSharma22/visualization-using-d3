@@ -75,7 +75,9 @@ const ScatterPlot = ({ data, width, height }) => {
                 <p><span>Likelihood:</span> ${
                   d.likelihood ? d.likelihood : 0
                 }</p> 
-                <p><span>Intensity:</span> ${d.intensity ? d.intensity : 0}</p>
+                <p><span>Intensity:</span> ${
+                  d.intensity ? d.intensity : "NA"
+                }</p>
                 <p><span>Sector:</span> ${d.sector ? d.sector : "Other"}</p>
               </div>
              `
